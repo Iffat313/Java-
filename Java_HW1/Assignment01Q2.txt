@@ -1,0 +1,78 @@
+public class Assignment01Q2
+{
+	public static void main(String[] args) {
+		//finding the population for year one
+		//calculate the number of seconds in one year
+		int SecondsInOneYear = 365*24*60*60;
+		
+		//divide the number of seconds in one year by the three assumptions
+		int BirthPopulationYearOne = SecondsInOneYear/7;
+		int DeathsPopulationYearOne = SecondsInOneYear/13;
+		int ImmigrantPopulationYearOne = SecondsInOneYear/45;
+		
+		int PopulationYearOne = 312032486 + BirthPopulationYearOne - DeathsPopulationYearOne + ImmigrantPopulationYearOne;
+		
+		//
+		
+		//finding the population year two
+		//calculating the number of seconds in two year
+		int SecondsInTwoYear = 365*2*24*60*60;
+		
+		//divided the number of seconds in two years by each of the three assumptions 
+		int BirthPopulationYearTwo = SecondsInTwoYear/7;
+		int DeathsPopulationYearTwo = SecondsInTwoYear/13;
+		int ImmigrantPopulationYearTwo = SecondsInTwoYear/45;
+		
+		int PopulationYearTwo = 312032486 + BirthPopulationYearTwo - DeathsPopulationYearTwo + ImmigrantPopulationYearTwo;
+		
+		//
+		
+		//finding the population for year three:
+		//calculate the total number of seconds in three years:
+		int SecondsInThreeYear = 365*3*24*60*60;
+		
+		//divide the the number of seconds in three years by each assumption 
+		int BirthPopulationYearThree = SecondsInThreeYear/7;
+		int DeathsPopulationYearThree = SecondsInThreeYear/13;
+		int ImmigrantPopulationYearThree = SecondsInThreeYear/45;
+		
+		//calculate the total number of U.S. population year three;
+		int PopulationYearThree = 312032486 + BirthPopulationYearThree - DeathsPopulationYearThree + ImmigrantPopulationYearThree;
+		
+		//
+		
+		//finding the population for year four:
+		//calculate the total number of seconds in year four
+		int SecondsInFourYear = 365*4*24*60*60;
+		
+		//take the number of seconds in four years and divide it by each assumption
+		int BirthPopulationYearFour = SecondsInFourYear/7;
+		int DeathsPopulationYearFour = SecondsInFourYear/13;
+		int ImmigrantPopulationYearFour = SecondsInFourYear/45;
+		
+		//calculate the total population for year four:
+		int PopulationYearFour = 312032486 + BirthPopulationYearFour - DeathsPopulationYearFour + ImmigrantPopulationYearFour;
+		
+		//
+		
+		//Calculate the total population for year five:
+		//calculate the total number of seconds in five years:
+		int SecondsInFiveYear = 365*5*24*60*60;
+		
+		//Divide the number of seconds by each assumption
+		int BirthPopulationYearFive = SecondsInFiveYear/7;
+		int DeathsPopulationYearFive = SecondsInFiveYear/13;
+		int ImmigrantPopulationYearFive = SecondsInFiveYear/45;
+		
+		//calculate the total population in year five
+		int PopulationYearFive = 312032486 + BirthPopulationYearFive - DeathsPopulationYearFive + ImmigrantPopulationYearFive;
+		
+		System.out.println("year 1: " + PopulationYearOne);
+		System.out.println("year 2: " + PopulationYearTwo);
+	    System.out.println("year 3: " + PopulationYearThree);
+	   	System.out.println("year 4: " + PopulationYearFour);
+		System.out.println("year 5: " + PopulationYearFive);
+		
+		
+	}
+}

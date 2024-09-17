@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class Assignment01Q4
+{
+	public static void main(String[] args) {
+		Scanner object = new Scanner(System.in);
+		int UserInput;
+		int cost = 0;
+		System.out.println("Enter your lottery (three digits): ");
+
+		//random number from a to a+b excluding a+b
+		//must include the parenthesis around random number to get random
+		int Random_Number = 100 + (int)(Math.random() * 900);
+		UserInput = object.nextInt();
+		
+
+		//System.out.println(Random_Number);
+
+		//case 1:if user matches the exact random number they win 10,000
+		if(UserInput == Random_Number) {
+		    System.out.println("lottery is: " + Random_Number);
+			System.out.println("You matched the number exactly, you win $10,000");
+			System.exit(0);
+		}
+		//Random_Number = 897;
+
+
+
+		//case 2: if the user matches three digits
+
+		//break down the user digits
+		int UserReducedDigitToTwo = UserInput/10;
+		int UserLastDigit = UserInput%10;
+
+		//jusy like the seconds to years and hours, the last two are found from divison and modolus
+		int UserFirstDigit =  UserReducedDigitToTwo/10;
+		int UserMiddleDigit = UserReducedDigitToTwo%10;
+
+		//
+
+		//break down the user digits
+		int RandomReducedDigitToTwo = Random_Number/10;
+		int RandomLastDigit = Random_Number%10;
+
+		//again, just like the seconds to years and hours....
+		int RandomFirstDigit = RandomReducedDigitToTwo/10;
+		int RandomMiddleDigit = RandomReducedDigitToTwo%10;
+        
+       /** System.out.println(UserInput);
+		System.out.println(UserFirstDigit);
+		System.out.println(UserMiddleDigit);
+        System.out.println(UserLastDigit);
+        System.out.println('\n');
+        System.out.println(Random_Number);
+        System.out.println(RandomFirstDigit);
+        System.out.println(RandomMiddleDigit);
+        System.out.println(RandomLastDigit);
+        **/
+        
+        if(UserFirstDigit==RandomFirstDigit || UserFirstDigit==RandomMiddleDigit || UserFirstDigit==RandomLastDigit){
+           // System.out.println("You matched");
+            cost++;
+             if(UserMiddleDigit==RandomFirstDigit || UserMiddleDigit==RandomMiddleDigit || UserMiddleDigit==RandomLastDigit){
+                // System.out.println("You matched");
+                 cost++;
+                  if(UserLastDigit==RandomFirstDigit || UserLastDigit==RandomMiddleDigit || UserLastDigit==RandomLastDigit){
+                     // System.out.println("You matched");
+                      cost++;
+                  }
+             }
+        }
+
+
+		if(cost==1) {
+		    System.out.println("lottery is: " + Random_Number);
+			System.out.println("You matched one digit, you win a $1,000!");
+		}
+		else if(cost==3) {
+		    System.out.println("lottery is: " + Random_Number);
+			System.out.println("You matched all digits, you win $3,000!");
+		}
+		else {
+		    System.out.println("lottery is: " + Random_Number);
+			System.out.println("Sorry, no match!");
+		}
+    
+
+
+
+	}
+}

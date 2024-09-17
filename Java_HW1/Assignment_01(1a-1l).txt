@@ -1,0 +1,52 @@
+1a. Compiled language is when a compiler translates the entire source code into a machine code file. Then the machine code file is executed. Interpreted language is when the interpreter translates the source code into machine code one statement at a time. For each statement translated into machine code, then we execute it right away. 
+
+1b. JDK stands for Java Development Kit. It’s a collection of software used to create, compile, and run your java programs. JRE stands for Java Run-Time environment. The JRE is used when running a Java program. 
+
+1c. The Java source filename extension is .java. The Java bytecode filename extension is .class. 
+
+1d. The command that is used to compile a java program is javac classname.java (when compiling a java program the file extension is required) 
+
+1e. The command that is used to run a java program is java classname (when running a java file the, file extension is not required) 
+
+1f. JVM is known as Java Virtual Machine. JVM is used to convert the already compiled java file (which is byte code) into machine code.
+
+1g. This error would be a runtime error. 
+
+1h. 2.5, 2
+
+1i. These types of conversions are not allowed.You cannot convert an int to a boolean and vice versa. In fact, it produces a runtime error. 
+
+1j. The data types that are required for a switch variable are: string, int, byte, and a short. You can use a variable however it must contain the data types said earlier and have the keyword fixed. At the end of every switch statement there should be a break keyword. Otherwise, execution will continue until the next case’s statement will be executed, even if the current case value doesn’t satisfy the value of the switch expression. So what is the purpose of the “break” keyword?: It is to terminate a switch structure right away. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1k) y=2. y=2 because the break keyword is not present for the statement of case 6. Remember, if the case value matches the switch-espression the statement will execute. However, if you are forgetting a break keyword, it will execute the statement of the next case regardless of whether the current case value matches the switch expression or not. It will do this until it finds a break keyword or reaches the end of the switch structure. 
+public class Main
+{
+	public static void main(String[] args) {
+		int x = 3;
+		int y = 3;
+		if(x+3=6){
+		    y = 1;
+		}
+		else{
+		    y+=1;
+		}
+		
+		
+	}
+}
+
+
+1l. The math class does not need to be imported because it is a part of the java.lang pack or package. Any class that is a part of the java.lang pack means that it is already available within your/our java program. However, a class such as the scanner class is a different story. 

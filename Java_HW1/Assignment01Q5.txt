@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Assignment01Q5
+{
+	public static void main(String[] args) {
+	    
+	    //variables for first circle
+	    float x_cord_one, y_cord_one, r1;
+	    //variables for second circle
+	    float x_cord_two, y_cord_two, r2;
+	    
+	    Scanner object = new Scanner(System.in);
+	    
+	    System.out.println("Enter circle1’s center x-, y-coordinates, and radius: ");
+		
+		//as the user spaces out their input, that input number will go to the order of the corresponding list of variables from top to bottom
+		x_cord_one = object.nextFloat();
+		y_cord_one = object.nextFloat();
+		r1 = object.nextFloat();
+		
+		
+		System.out.println("Enter circle2’s center x-, y-coordinates, and radius: ");
+		x_cord_two = object.nextFloat();
+		y_cord_two = object.nextFloat();
+		r2 = object.nextFloat();
+		
+		//use the distace formula between the two centers. Recall that when we say center were referring to the two points. 
+		//A point is consisted of a x cordinate and a y cordinate. Anytime we create a point, we are to assume that this cordinate
+		//will always as the center of a point. Therefore, we're really caculating the distance of just two points. 
+		
+		double distance = Math.sqrt(Math.pow(x_cord_two-x_cord_one, 2) + Math.pow(y_cord_two-y_cord_one,2));
+		
+		if(distance<=r1-r2){
+		    System.out.println("circle2 is inisde of circle1");
+		}
+		else if(distance<=r1+r2){
+		    System.out.println("circle2 overlaps circle1");
+		}
+		else{
+		    System.out.println("It is neither inside nor overlaping for circle2 and circle1");
+		}
+		
+	}
+}

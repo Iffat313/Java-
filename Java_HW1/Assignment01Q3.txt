@@ -1,0 +1,46 @@
+import java.util.Scanner;
+//the class is not apart of the java.lang package so you must explcitly import it
+public class Assignment01Q3
+{
+	public static void main(String[] args) {
+	    
+	int UserInput;
+	System.out.println("Enter The Number Of Seconds: (e.g. 1 billion): ");
+	//the class scanner is not a static method, Meaning that inorder to invoke
+	//the methods of the class you must create an object. 
+	Scanner object = new Scanner(System.in);
+	UserInput = object.nextInt(); 
+	/*
+	- When converting the number of seconds into the following, 
+	most of the actual converted values comes from modulous. However, we
+	use divsion as a step to get to the next value. Going back, 
+	the last converted two values from both divison and modolus are 
+	found. 
+	
+	- The process above may not seem clear at first but you will 
+	see it as we go down the code. 
+	
+	- If it makes the process any easier, we're always using the
+	divison operator and modulos operator to the same value
+	*/
+	
+	int Seconds_division = UserInput/60;
+	int RealSeconds = UserInput%60;
+	
+	int Minutes_dvision = Seconds_division/60;
+	int RealMinutes = Seconds_division%60; 
+
+	int Hours_division = Minutes_dvision/24;
+	int RealHours = Minutes_dvision%24;
+	
+	int RealYears = Hours_division/365;
+	int RealDays = Hours_division%365;
+	
+	System.out.println("In " + UserInput + " there are: " + RealYears + " years");
+	System.out.println("In " + UserInput + " there are: " + RealDays + " days");
+	System.out.println("In " + UserInput + " there are: " + RealHours + " hours");
+	System.out.println("In " + UserInput + " there are: " + RealMinutes + " minutes");
+	System.out.println("In " + UserInput + " there are: " + RealSeconds + " seconds");
+	
+	}
+}
