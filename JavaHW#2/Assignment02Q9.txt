@@ -1,0 +1,41 @@
+
+import java.util.Scanner;
+public class Vowels
+{
+	public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+       String UserInput = in.nextLine();
+       
+       int a_count = 0, e_count = 0, i_count = 0, o_count = 0, u_count = 0, other_count = 0;
+       UserInput.toLowerCase();
+       
+       
+       for(int i =0; i<UserInput.length(); i++){
+           switch(UserInput.charAt(i)){
+               case 'a':
+                   a_count++;
+                   break;
+               case 'e':
+                   e_count++;
+                   break;
+               case 'i':
+                   i_count++;
+                   break;
+               case 'o':
+                   o_count++;
+                   break;
+               case 'u':
+                   u_count++;
+                   break;
+               default:
+                   other_count++;
+           }
+       }
+       System.out.println("a: " + a_count);
+       System.out.println("e: " + e_count);
+       System.out.println("i: " + i_count);
+       System.out.println("o: " + o_count);
+       System.out.println("u: " + u_count);
+       System.out.println("other characters: " + other_count);
+	}
+}

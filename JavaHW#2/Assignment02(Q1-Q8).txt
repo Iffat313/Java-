@@ -1,0 +1,171 @@
+
+1a) 
+public class Main
+{
+	public static void main(String[] args) {
+	    /**what is considered as a literal for a character?:
+	     A literal is the value for the character type. A 
+	     literal is considered correct when it is valid to a pro 
+	     **/
+		char variable = '1';// correct literal
+		
+		char variable2 = '\u345dE'; //incorrect literal. 
+		//This unicode consists of five values, not four. 
+		
+		char variable3 = '\u3fFa'; //correct literal.
+		
+		char variable4 = '\b'; //correct literal. This creates a backspace 
+		char variable5 = '\t'; //correct literal. This creates a tab
+		System.out.println(variable3);
+	}
+}
+
+1b) 
+public class Main
+{
+	public static void main(String[] args) {
+	    /**
+	     Code
+	    **/
+	   int number = 97 + (int)(Math.random() * 26);
+	   System.out.println(number);
+	   char character = (char)number; //to avoid loose conversion must use (char)
+	   System.out.println(character);
+	}
+}
+
+1c)  The incorrect portion of this code rests in where the programmer attempts to take input of a string type from a user. The programmer should have created a new object of Scanner to take user input for a string. nextLine(); is used to take input and to ignore white space terminating characters, that is fine. But we need to create another object of the class scanner to take input of type string after taking input of type int. 
+
+1d) %b, %c, %d, %f, %s
+
+2) 
+int number = 34 + (int)(Math.random() * 22);
+int number = 0 + (int)(Math.random() *999)
+
+3) 
+public class Main
+{ //explicit type casting from chapter 2 
+	public static void main(String[] args) {
+	   //is ALLOWED
+	   char c = 'A';
+	   int i = (int)c; //explicit conversion required. Variable alone is error
+	   System.out.println(i); //65
+	   
+	   //is ALLOWED
+	   float f = 1000.34f;
+	   //int i = (int)f; //explicit conversion required
+	   //System.out.println(i); //1000
+	   
+	   //is ALLOWED
+	   double d = 1000.34;
+	   //int i = (int)d; //explicit conversion required 
+	   //System.out.println(i); //1000
+	   
+	   //is ALLOWED
+	   int i = 97;
+	   char c  =  (char)i; //will work and be some letter
+	   System.out.println(c); //a
+	}
+}
+
+
+4a) False 
+
+4b) True
+
+4c) False 
+
+4d) True
+
+4e) Returns an integer less than zero. 
+
+4f) Returns an integer greater than zero.
+
+4h) W
+
+4i) Returns an integer that is less than one. 
+
+4j) 15
+
+4k) me to Java
+
+4l) WELCOME TO JAVA
+
+4m) welcome to java
+
+5a) correct
+
+5b) incorrect
+
+5c) correct
+
+5d) incorrect //cannot use this relational operator
+
+5e) correct
+
+5f) incorrect //when retrieving an element from a string you must use .charAt()
+
+5g) incorrect //uses the .charAt method successfully but uses the value of the length. The length is a invalid index number for any array as index counting is one less. 
+
+
+
+
+
+
+
+
+6a) 
+amount is 32.4
+
+6b)  Exception in thread "main" java.util.IllegalFormatPrecisionException: 2
+	at java.base/java.util.Formatter$FormatSpecifier.checkInteger(Formatter.java:3138)
+	at java.base/java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2874)
+	at java.base/java.util.Formatter.parse(Formatter.java:2713)
+	at java.base/java.util.Formatter.format(Formatter.java:2655)
+	at java.base/java.io.PrintStream.format(PrintStream.java:1053)
+	at java.base/java.io.PrintStream.printf(PrintStream.java:949)
+	at Main.main(Main.java:12)
+
+6c) 
+ false 
+
+6d)
+  Java
+
+6e) 
+   falseJava    
+
+6f) 
+312,342 315,562.9
+
+
+7) while loop conversion:
+
+	long sum = 0;
+	int i = 0;
+	while(i<=1000){
+		   i++;
+		   sum = sum + i;
+             }
+
+Do-while loop conversion:
+	long sum = 0;
+	int i = 0;
+	do{
+i++;
+		sum = sum + i;
+	}while(i<=1000);
+
+
+
+8) 
+
+/** The error here rests in the expression statement of the while loop. The while loop becomes a infinite while loop as the placement of i++ is placed after the if statement of (i%3==0). Again, once i=3, it will always hit true for this if statement thus not allowing the variable i to increment. **/
+
+	    int i = 0, sum = 0;
+	    while(i<4){
+	        sum+=i;
+	        i++;
+	        if(i%3==0){
+	            continue;
+	        }

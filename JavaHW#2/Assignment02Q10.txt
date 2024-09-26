@@ -1,0 +1,32 @@
+
+import java.util.Scanner;
+public class Social_Security
+{
+	public static void main(String[] args) {
+		//no array needed. 
+		//form a long boolean expression and check one character at a time
+		Scanner in = new Scanner(System.in);
+		String UserInput;
+		UserInput = in.next();
+		UserInput = UserInput.toLowerCase();
+		String good = "good";
+		String good2 = "good";
+		for(int i = 0; i<UserInput.length(); i++){
+		    if(i == 3 || i == 6 ){
+		        continue;
+		    }
+		    else if((UserInput.charAt(i) == '-' || UserInput.charAt(i) == 'a') || (UserInput.charAt(i) == 'b' || UserInput.charAt(i) == 'c') || (UserInput.charAt(i) == 'd' || UserInput.charAt(i) == 'e') || (UserInput.charAt(i) == 'f' || UserInput.charAt(i) == 'g') || (UserInput.charAt(i) == 'h' || UserInput.charAt(i) == 'i') || (UserInput.charAt(i) == 'j' || UserInput.charAt(i) == 'k') || (UserInput.charAt(i) == 'l' || UserInput.charAt(i) == 'm') || (UserInput.charAt(i) == 'n' || UserInput.charAt(i) == 'o') || (UserInput.charAt(i) == 'p' || UserInput.charAt(i) == 'q') || (UserInput.charAt(i) == 'r' || UserInput.charAt(i) == 's') || (UserInput.charAt(i) == 't' || UserInput.charAt(i) == 'u') || (UserInput.charAt(i) == 'v' || UserInput.charAt(i) == 'w') || (UserInput.charAt(i) == 'x' || UserInput.charAt(i) == 'y') || UserInput.charAt(i) == 'z'){
+		        good2 = "bad";
+		        System.out.println(UserInput + " is an invalid social security number");
+		        break;
+		    }
+		}
+		
+		if(good.equals(good2)){
+		    System.out.print(UserInput + " is a valid social security number");
+		}
+		
+		
+	    
+	}
+}
