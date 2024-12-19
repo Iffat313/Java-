@@ -1,0 +1,208 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class test
+{
+	public static void main(String[] args) {
+		MyInteger n1 = new MyInteger(5);
+		MyInteger n2 = new MyInteger(24);
+		MyInteger x = new MyInteger(0);
+		System.out.println("n1 is even? " + n1.isEven());
+		System.out.println("n1 is prime? " + n1.isPrime());
+		System.out.println("15 is prime? " + x.isPrime(15));
+		String numeric = "3539";
+		char[] array = {'3', '5', '3', '9'};
+		System.out.println(n1.parseInt(array));
+		System.out.println(n1.parseInt(numeric));
+		System.out.println("n2 is odd? " + n2.isOdd());
+		System.out.println("45 is odd? " + x.isOdd(45));
+		System.out.println("n1 is equal to n2? " + n1.equals(n2));
+		System.out.println("n1 is equal to 5? " + n1.equals(5));
+		
+	}
+}
+
+class MyInteger
+{
+	private int value;
+
+	public MyInteger(int v) {
+		value = v;
+	}
+
+	//instance isEven(), isOdd(), isPrime() refers to the value of the object
+	public boolean isEven() {
+		if(value % 2 == 0 ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isOdd() {
+		if(value % 2 != 0) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isPrime() {
+		if(value<2) {
+			return false;
+		}
+
+		else if((isEven() == true) && (value!=2)) {
+			return false;
+		}
+
+		else {
+			int sqaure_root = (int)Math.sqrt(value);
+			for(int i = 2; i<=sqaure_root; i++) {
+				if(value%i == 0) {
+					return false;
+				} //this means our number is divisibile, other than itself and online
+			}
+			return true;
+		}
+	}
+
+	//static specificed value of the big three methods above
+
+	public static boolean isEven(int passed) {
+		if(passed % 2 == 0) {
+			return true;
+		}
+
+		else {
+			return false;
+		}
+	}
+
+	public static boolean isOdd(int passed) {
+		if(passed % 2 != 0) {
+			return true;
+		}
+
+		else {
+			return false;
+		}
+	}
+
+	public static boolean isPrime(int passed) {
+		if(passed<2) {
+			return false;
+		}
+
+		else if((isEven(passed) == true) && (passed!=2)) {
+			return false;
+		}
+
+		else {
+
+			int sqaure_root = (int)Math.sqrt(passed);
+			for(int i = 2; i<=sqaure_root; i++) {
+				if(passed % i == 0) {
+					return false;
+				}
+			}
+
+			return true;
+		}
+	}
+
+	//the big three above static again but parameter is the class object
+	public static boolean isEven(MyInteger obj) {
+		if(obj.value % 2 == 0) {
+			return true;
+		}
+
+		else {
+			return false;
+		}
+	}
+
+	public static boolean isOdd(MyInteger obj ) {
+		if(obj.value % 2 != 0) {
+			return true;
+		}
+
+		else {
+			return false;
+		}
+	}
+
+	public static boolean isPrime(MyInteger obj) {
+		if(obj.value<2) {
+			return false;
+		}
+
+		else if((isEven(obj.value) == true) && (obj.value!=2)) {
+			return false;
+		}
+
+		else {
+
+			int sqaure_root = (int)Math.sqrt(obj.value);
+			for(int i = 0; i<=sqaure_root; i++) {
+				if(obj.value % i == 0) {
+					return false;
+				}
+			}
+
+			return true;
+		}
+	}
+	
+	//equals methods
+	
+	public boolean equals(int passed){
+	    if(passed == this.value){
+	        return true;
+	    }
+	    else{
+	        return false;
+	    }
+	}
+	
+	public boolean equals(MyInteger obj){
+	    if(this.value == obj.value){
+	        return true;
+	    }
+	    
+	    else{
+	        
+	        return false;
+	    }
+	}
+	
+	public int parseInt(char[] array){
+	    String variable = "";
+	    for(int i = 0; i<array.length; i++){
+	        variable = variable + (array[i] - '0');
+	    }
+	    
+	    int number = 1;
+	    for(int i = 0; i<variable.length(); i++){
+	        number = number * 10 + variable.charAt(i) - '0'; //takes decimal value of the difference between the char value
+	    }
+	    
+	    return number;
+	}
+	
+	public int parseInt(String variable){
+	    int number = 1;
+	    for(int i = 0; i<variable.length(); i++){
+	        number = number * 10 + variable.charAt(i) - '0'; //takes the decimal value of the difference between the char value
+	    }
+	    return number;
+	}
+
+
+
+}

@@ -1,0 +1,156 @@
+1a) Recall in Java that classes can come in the form of packages. The classes System and Math are automatically imported from the default package java.lang. Because java.lang is one of the only packages available to our program, there is no need to import them manually as JVM will do this for us.  However, the classes Random and Date are a part of the java.util package. Unlike java.lang, this needs to be stated explicitly in the program for classes to be imported. You can either do java.util.* to import all classes within this package, or you can write the class name to import the specific class from the package. This also works for the java.lang package as well. 
+
+
+1b) 
+To convert a integer to a string:
+int x = 5;
+String integer = “” + x; //java evaluates from left to right! 
+Or
+String.valueOf(x);
+
+To convert a numeric string into a integer:
+String NumericString = “123”;
+int value = Integer.parseInt(NumericString);
+
+To convert a double number into a string:
+double value = 123.456;
+String DoubleValue = “” + value;
+Or we can do:
+String.value0f(value);
+
+To convert a numeric string into a double value:
+String NumericString = “123”;
+double value2 = Double.parseDouble(NumericString);
+
+1c) 
+x is 7
+y is 4
+z is 11
+
+1d)
+The first line is better: String s = “welcome to Java.” The answer is simple, there’s less syntax and we should use the shorthand initializer since Strings are always used in programming.  We must recall that a String is a reference type meaning that it stores the memory address of a string object that was created on the heap. Just to be clear, both lines execute this. You also have to consider other string objects with the same content. It would be a waste of memory if we constantly initialize these reference variables of type string with new memory address. All for them to have string objects with the same content. 
+
+1e) No. There is no method in the String class that changes the contents of the string. When we say that a class is immutable (in this case String class), we’re clear that we cannot change the contents of the object once the object has been declared. In short, it means that the value is fixed to that object created on the heap. The methods may return a string of a modified type, but it does not change the contents of the string. If the value of the string object is different via it’s reference variable (ex: String v = “hi”; v = “changed”;) then there is a new memory address and string object assigned to the reference variable. 
+
+
+
+1f) The length would be zero. You’ve essentially declared a String but haven’t initialized the value for the string. Of course, this also means that the reference variable has the memory address for a string object but the object is currently null. This is where we must be careful of null pointer exception. 
+
+1g) StringBuilder class provides additional methods for manipulating a string builder and obtaining its properties.  Whereas a StringBuffer is a class where the methods for modifying a buffer are synchronized, which means that only one task us allowed to execute the methods. 
+
+
+1h)  StringBuilder s = s.reverse();
+
+
+1j) 
+Java //remember, a string is immutable so it’s contents will never change
+Java and HTML //a string object of the class StringBilder is a type of string that is mutable. We can change the contents of the string object without giving it a new memory address of a new string object. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q2) 
+Context: A wrapper class is a type of class where we can assign a primitive value to an object of the class wrapper of whatever primitive type. Of course, seeing as there are 7 primitive types there are 7 wrapper primitive classes. With wrapper classes of any primitive type, we can either do autoboxing or autounboxing.
+
+Autoboxing: Is when java automatically converts primitive value to an object of the class wrapper of a corresponding primitive type. Thus assigning the primitive value to an object of the class wrapper of the corresponding primitive type. 
+Ex:
+(Integer intObject = 2;; //shorthand notation) 
+or
+(Integer intObject = new Integer(2); //longer notation but both achieve the same idea)
+
+Autoboxing: Is the reverse of autoboxing. Essentially, it is the automatic conversion of the wrapper object to a primitive data type. However, I see it as: “The unwrapping of the primitive value which was previously assigned to an object of the class wrapper of the same primitive type but it is now assigned to a variable of that same primitive data type. Of course, seeing this variable will no longer have access to methods of the wrapper class of whatever primitive type. 
+Ex:
+(int i = 1; //Now that you’ve learned autoboxing, we now recognize that were autoboxing almost anytime we declare and initialize a variable of a primitive type)
+Or
+(int i = new Integer(1)); 
+
+
+
+a)Integer x = 3 + new Integer(5); //correct. new Integer(5) does autunboxing but after it adds with three it does autoboxing 
+b)Integer x = 3; //correct. This will execute autoboxing
+c)Double x = 3; //correct. It will automatically convert the 3 to 3.0 (implicit casting). This will also execute 
+d)Double x = 3.0; //correct. This will execute autoboxing
+e)int x = new Integer(3); //correct. This will execute autounboxing 
+f)int x = new Integer(3) + new Integer(4); //correct. This will execute autounboxning 
+
+
+
+
+
+
+
+
+
+
+Q3) 
+
+a)True //they literally intalize  s2 to equal s1 so now both reference variables refer to the same memory address. 
+b)False // sure, both reference variables have two string objects with the same content but that’s not what were comparing right now. Right now, we’re comparing as to whether both reference variables refer to the same location. They won’t. This is because, s3 was intialized with a new memory address. 
+c)True //by convenience, the compiler will make both reference variables reference to the same memory address as both string object’s contents are roughly the same. 
+d)True
+e)True
+f)Welcome to HTML
+g)WelcVme tV Java 
+h)WelcVTme tVT Java
+i)WelcTme to Java
+j)[‘W’, ‘e’, ‘l’, ‘c’, ‘o’, ‘m’, ‘e’, ‘ ‘, ‘t’, ‘o’, ‘ ‘, ‘J’, ‘a’, ‘v’, ‘a’];
+
+
+
+Q4) Note. As we know in Java, strings are immutable (cannot change!). However, a string object of the class StringBuilder and StringBuffer is an exception as both objects said classes work with a string object which can have it’s content changes without giving it a new memory address and a new string object. This is known as a string buffer. 
+
+a)s1 = Java is fun
+b)s1 = Java is funHTML
+c)s1 = Javis funa is funHTML
+d)s1 = JaHTMLvis funa is funHTML
+e)H
+f)25
+g)s1 = JaHMLvis funa is funHTML
+h)s1 = JMLvis funa is funHTML
+i)s1 = LMTHnuf si anuf sivLMJ
+j)s1 = LComputerHnuf si anuf sivLMJ
+k)Co
+l)ComputerHnuf si anuf sivLMJ
+
+
+
+
+
+Q5) 
+
+a)ab*c  = String must begin with letter A. Then followed by zero or more b's. Then end with a c: ac, abc, abbc 
+
+b) ab+c =  String must begin with letter A. Then followed by  one more b's. Then end with a c: abc, abbc, abbbbc
+
+
+c) ab?c = String must begin with letter A. Then followed by zero or one b. Then dend with a c: ac, abc
+
+d) ab{1,3}c = String must begin with letter A. Then followed by 1 to 3 (inclusive of 3) b's. Then end with a c: abc, abbc, abbbc
+
+e) 
+
+f) [0-9] = Must be a single digit 
+
+g) 
+
+h)[0-9,10-99]

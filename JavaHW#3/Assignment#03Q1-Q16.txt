@@ -1,0 +1,232 @@
+
+
+Q1) //This is a value return type of method, therefore when it is called it cannot be a stand alone //statement. It can only be called from a print statement or intalized to a variable of the same //data type as the return type
+a)Valid
+b)Valid
+c)Valid
+d)Invalid - a string is a different data type then what a double is
+e)Invalid - the method cube has a parameter of three not two
+f)Valid - you can assign a int to a double and it will convert to a double as double as a larger place holder.
+
+Q2) 
+ public class Test
+{               //error1             //error2
+	public static void method1(int n, int m){
+	    n+=m;
+	    method2(3.4);
+	}
+	                        //error3
+	public static int method2(double n){
+	    if(n>0){
+	        return 1;
+	    }
+	    else if(n == 0){
+	        return 0;
+	    }
+	    else{ //error4
+	        return -1;
+	    }
+	}
+	//please note that the errors indicated above are corrected.
+	//error 1: method was missing a data type (I chose void because nothing being returned)
+	//error 2: the variable m in the parameter was missing a data type
+	//error 3: method2 was missing a data type. The datatype here I chose was int because 
+	//what’s being returned in the definition is a int.
+	//error 4: last selection statement statement should be a else not a else if
+}
+
+
+
+
+
+
+Q3)
+public class Test
+{
+	public static void main(String[] args) {
+	   
+	   	double[] r;
+	   	r = new double[100];
+	   	
+	   	for(int i = 0; i<r.length; i++)
+	   	    r[i] = Math.random() * 100;
+	   	
+	   	//error 1: array is not declared and created properly in the seperate lines
+	   	//double[] r;
+	   	//r = new double[100];
+	   	//error 2: r.length() is incorrect it should be r.legnth. If r was a string then it would   //be correct
+	   	//error 3: r(i) is the incorrect way to recive an index it should be r[i];
+	   	//error 4: Math.random is incorrect it should be Math.random()
+	   	//error 5: putting a semicolon after the for loop would be a empty statement
+	   	//the for loop will not run infinite number of times as i++ but it's useless
+	}
+}
+
+Q4) It is not resizing the array rather it’s creating a completely new array of the same type, name, but with a bigger size. Any values that the myList array had prior to this new array would be omitted due to the newly created array. 
+
+Q5) False. When we pass an array as an argument to the parameter of a method, it is considered to be pass by reference. This means whatever changes this array faces in the method definition will have the same changes to the array that was passed into the method. 
+
+Q6a) 
+number is 0 and numbers[0] is 3;
+/** a premetivie data type passed into a parameter will be pass by reference. Meaning that any changes the value of the variable faces inside of the method will not affect the value of the variable outside of the method **/
+
+Q6b) 5 4 3 2 1
+
+
+
+
+
+
+Q7) 
+public static void print(String... strings, double... numbers)
+/**there are two argos or variable length parameters. The method should only contain one variable length parameter. Because the user can pass two arguments, that means the method should place the variable length parameter as the last parameter for method signature and omit the first one.**/
+
+public static void print(double... numbers, String name)
+/**The parameter list of this method is correct in only having one variable length parameter. However, because there are more than one parameters the last parameter should be the variable length parameter.**/
+
+public static double... print(double d1, double d2)
+/**the error here is that the ellipsis operator is used between the return type of the method and the name of the method. This is incorrect as the ellipsis operator should be used between the datatype and the variable.**/ 
+
+Q8) The types of array’s that can be sorted with java.util.Arrays.sort(list) is short, int, long, float, double, char
+
+Q9) //list1 outputs to = [7,7,7,7];
+//list2 outputs to = [2, 4, 7, 10] and it will be false;
+
+Q10) 
+/**to find the output create a java program and save it on your computer. Going on cmd, change into the appropriate directory. Compile the java program with the command javac classname.java and to run the byte code simply java classname. As for the program, any bit of text, whether it is a single character or multiple words is considered as a string. The empty spaces between each text is not considered as a string but what comes after is considered the next string. The parameter of the main method will take each string as an element for the string array args. It should be noted, that the strings start to count as an element to the string array args after the word “Test” on the cmd.**/
+
+//1. java Test I have a dream 
+Number of strings is 4
+I
+have
+a
+dream 
+
+//2. java Test “1 2 3”
+Number of strings is 1
+1 2 3
+
+
+
+//3. java Test
+Number of strings is 0
+/**Please note that if there are no strings, the array is not null but rather the number of strings is zero. Again, because we pass no strings to the string array args, args has no choice but the number of string element’s in its array is 0.**/
+
+
+
+
+Q11.1) Correct, the rows in a 2D array can have a different number of lengths. A great example is a ragged array.
+
+Q11.2) array[0][1] is 2;
+
+Q11.3)
+6 5
+4 3
+2 1
+
+Q11.4) 
+2
+4
+//System.out.println(m1(array)[0]); == System.out.println(result[0])  == 2
+
+Q12a) invalid: int[] list = new int[75];
+
+Q12b) valid
+
+Q12c) invalid: int[] test = new int[10]; //negative size does not work
+
+Q12d) invalid: double[] sales = new double[40]; //the value for the number of elements is a integer.
+
+
+
+
+
+
+
+
+
+
+Q13) 
+Scanner console  = new Scanner(System.in);
+
+Int[] myList = new int[10];
+
+for(int i = 0; i<10; i++)
+	myList = console.nextInt();
+
+for(int i = 0; i<10; i++)
+	System.out.print(myList[i] + “ “);
+System.out.println();
+
+Q14) An array index out-of-bounds means that you are attempting to access an element at a position or certain index value that surpasses the highest possible index number. Yes, java does check for array indices within bound.
+
+Q15a) valid
+
+Q15b) valid
+
+Q15c) invalid //the argument is invalid with the parameter 
+
+Q15d) valid
+
+
+Q16a) int[][] alpha = new int[10][20];
+
+Q16b) //remember intiailze means to assign or give the value of something
+for(int row = 0; row<alpha.length; row++){
+	for( int column = 0; column<alpha[row]; column++){
+	Alpha[row][column] = 5;
+	}
+}
+
+
+
+
+
+
+Q16c) 
+for(int row = 0; row<alpha.length; row++)
+{
+	for(int column = 0; column<alpha[row].length; column++)
+	{
+	if(row==0){
+		alpha[row][column] = 1;
+		}
+	else{
+		alpha[row][column] = 2;
+		}
+	}
+}
+
+Q16d)
+	    int[][] alpha = new int[10][20];
+		for(int row = 0; row<alpha.length; row++) {
+			for(int column = 0; column<alpha[row].length; column++) {
+				if((row==0 && column==0)|| (row==1 && column==0) || (row==2 && column==0) || (row==3 && column==0) || (row==4 && column==0) || (row==5 && column==0) || (row==6 && column==0) || (row==7 && column==0) || (row==8 && column==0) || (row==9 && column==0)) {
+					alpha[row][column] = 5;
+				}
+				else {
+					alpha[row][column] = alpha[row][column-1] *2;
+				}
+			}
+		}
+
+Q16e) 
+for(int row = 0; row<alpha.length; row++){
+	for(int column = 0; column<alpha[row].length; column++){
+	System.out.print(alpha[row][column] + “ “);
+}
+System.out.println();
+}
+
+
+
+
+
+
+
+
+
+Q16d) 
+for(int column = 0; column<alpha.length; column++){
+	for(int row = 0; row<alpha[c
+}

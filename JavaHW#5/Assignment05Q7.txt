@@ -1,0 +1,75 @@
+
+Q7) 
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+	
+	}
+}
+
+class MyStringBuilder2
+{
+     private[] array;
+     private size; //maximumn number of elements in the array
+     private capacity; //maximum storage, back end
+    public MyStringBuilder2(String s){
+        size = s.length();
+        array = new char[size];
+        for(int i = 0; i<size; i++){
+            array[i] = s.charAt(i);
+        }
+    }
+    
+    public MyStringBuilder2 append(MyStringBuilder2 s){
+        if(this.size<s.size){
+            char[] temp = this.array;
+            int tempsize = this.size;
+            this.size = s.getSize();
+            this.array = new char[this.size];
+            for(int i = 0; i<tempsize; i++){
+                this.array[i] = temp[i];
+            }
+            
+            for(int j = tempsize, m = 0; j<s.getSiz(); j++){
+                this.array[j] = s.getString().charAt(i);
+            }
+        }
+        
+        else{
+            for(int i = 0; i<this.size; i++){
+                this.array[i]
+            }
+        }
+        
+        
+    }
+    
+    public int getSize(){
+        return size;
+    }
+    
+    public int getCapacity(){
+        return capacity;
+    }
+    
+    public String getString(){
+        String variable = "";
+        for(int i = 0; i<size; i++){
+            variable = variable + array[i]; 
+        }
+        
+        return variable;
+    }
+    
+    
+    
+    
+}

@@ -1,0 +1,78 @@
+public class Test
+{
+	public static void main(String[] args) {
+		//create an array of type GeometricObject
+		//this means the elements this array can store are elements of the class GeometricObject
+		//recall that an instance of a subclass is an instance of a superclass
+		//thus instances of subclass are allowed to be in this array.
+		GeometricObject[] array = new GeometricObject[5];
+		Sqaure obj1 = new Sqaure(4.0);
+		Sqaure obj2 = new Sqaure(20.25);
+		Sqaure obj3 = new Sqaure(25.20);
+		Circle obj4 = new Circle(78.53981633974483);
+		Rectangle obj5 = new Rectangle(4,3);
+		
+		array[0] = obj1;
+		array[1] = obj2;
+		array[2] = obj3;
+		array[3] = obj4;
+		array[4] = obj5;
+		
+		for(int i = 0; i<array.length; i++) {
+		    /**if the condition of this if statemet is true. That
+		     * means that a class object at index i has implemented 
+		     * the interface Colorable and thus is an instance of the 
+		     * interface Colorable. In short, the instanceOf operator
+		     * verifies this 
+		     * 
+		     **/
+			if(array[i] instanceof Colorable) {
+				System.out.println("Area is " + array[i].getArea() + " " + array[i].howToColor());
+			}
+			else {
+				System.out.println("Area is " + array[i].getArea());
+
+			}
+		}
+
+
+	}
+}
+
+interface Colorable {
+	public abstract void howToColor();
+}
+
+class Sqaure extends GeometricObject implements Colorable
+{
+	private double Side;
+
+	public Sqaure() {
+		Side = 4;
+	}
+
+	public void setSide(int x) {
+		Side = x;
+	}
+
+	public double getSide() {
+		return Side;
+	}
+
+	@Override
+	public void howToColor() {
+		System.out.println("Color all 4 sides");
+	}
+
+	@Override
+	public double getArea() {
+		return Side*Side;
+	}
+
+	@Override
+	public double getPerimeter() {
+		return 4*Side;
+	}
+
+
+}

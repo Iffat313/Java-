@@ -1,0 +1,122 @@
+Q1a) A class will have a default constructor when a class has not explicitly defined a constructor at all. This includes a constructor that either is a no argument constructor or a constructor that has a parameter. Either way, if the class does not include a explicit constructor defined above, the program will implicitly create a default constructor with no parameter.
+
+Q1b) Typically, when we create a class object, we give it a name:
+myClass object = new myClass(“Iffat”, 20);
+
+However, in java, when we do not create the name of the variable that holds the reference or memory address of the class object that is created on the heap, this is known as a anonymous object. The way this is done, is by using the second half of the syntax (only) when creating the class object. 
+new myClass(“Iffat”, 20).addage();
+
+Q1c) In java, a reference type is a variable of some type that holds the memory address of an object in memory rather than a direct value. For example, a String is considered as a reference type. Therefore, if your class contains a data field/data member/variable that is of a reference type and is not initialized with a memory address, it may lead to a NullPointerException. A NullPointerException, occurs when you try to invoke a method that contains a reference type with no initialized memory address or otherwise known as null value. This is a runtime error. Please note, that a declared variable does not have a default value. 
+
+Q1d) This is known as a compiler error. When you create an object for a class, can you invoke a constructor? You’re attempting to invoke a no argument constructor, when such a constructor does not exist. Only the constructor with an argument does.
+
+Q1e) It would output false. The variable x of type boolean is not a local variable but rather an instance variable. Instance variables that are declared but not initialized may have a default value. 
+
+Q1fa) A static method cannot invoke a instance method. A static method cannot access/use a instance variable 
+
+Q1fb) A instance method can invoke a static method and can use static variable 
+
+Q1g) There is no problem in this code. Yes, it is true that the instance variable radius is private. This means this variable is not accessible outside of the class. However, because the main method is a method apart of the class, it is considered as a class member. Regardless of the access specifier, all class members within the class have access to a method or data member, so as long as it is a class member.
+
+
+
+
+
+Q1h) 
+
+When you’re passing a parameter of a primitive type it is known as a pass by value. This means that any changes this value faces inside of the method will not affect the same variable that contains this value outside of the method. Instead, these changes are faced to a local copy of this value within the method.
+
+When you’re passing a parameter of a reference type it is known as pass by reference. Pass by reference is the complete opposite of pass by value. What happens here is that any changes this value faces inside of the method, will cause the same value outside of the method to face the same changes. 
+
+In the case of this question, the pass by value of the primitive type is the int value times. The 
+
+Output:
+count is 101
+times is 0 
+
+
+Q1i) The following class is mutable. Sure, your data fields are marked as private and there are no mutables but that does not mean it is immutable. It is mutable because you have a accessor that returns a reference which makes it mutable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q1j) 
+
+ public class C {
+	 private int p;
+	
+	 public C() {
+	            this(0);
+		System.out.println("C's no-arg constructor invoked");
+		
+		                     
+	}
+	
+	public C(int p) {
+		 this.p = p;
+		
+	}
+	
+	 public void setP(int p) {
+		 this.p = p;
+		
+	}
+	
+}
+
+A couple things to note in the correct program above:
+You can use this keyword to make a constructor invoke another constructor of the same class. The syntax is as follows: this(args-list). However, Java requires that the syntax statement must appear first in the constructor before any other executable statement. So swap the that statement with the print statement, as the print statement is a executable 
+You can use the this keyword is to reference a class’s private data fields. In the mutator method and arg constructor method, you’ll notice that we use the this keyword along with private method to refer to the private data filed rather than the parameter int p variable. 
+
+
+
+
+
+
+
+
+
+
+
+Q2) Note that if access specifier is not given, it is default. In this case, default is accessible outside of the class. 
+System.out.println(f.i); //correct, default access specifier works 
+System.out.println(f.s); //correct, the default access specifier works and you can use the reference variable to access a static data member
+f.imethod(); //correct, the default access specifier works and you can the reference variable to invoke a instance method
+f.smethod();//correct, the default access specifier works and you can use the reference variable to invoke a instance method. 
+System.out.println(F.i); //incorrect, you cannot use the classname to access a instance data field. If the data field was a static, then you can use the classname to access it
+System.out.println(F.s); //correct, you can use the classname to access to access a static data field 
+F.imethod(); //incorrect, you cannot use the classname to invoke a instance method.
+F.smethod(): //correct, you’re using the classname to invoke a static method.  
+
+Q3a) a[1]  = 2 a[0] = 1
+
+Q3b) a[1] = 1 a[0] = 2
+
+Q3c) e1 = 2 e2 = 1
+
+Q3d)
+ t1’s i = 3 and j = 1
+t2’s i = 3 and j = 1
+
+
+
+
+

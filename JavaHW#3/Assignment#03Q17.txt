@@ -1,0 +1,60 @@
+
+import java.util.Scanner;
+public class Candidates
+{
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String[] names = new String[5];
+		for(int i = 0; i<5; i++) {
+			System.out.print("enter the # " + (i+1) + " name of the five candidates in a local election: ");
+			names[i] = in.next();
+		}
+		
+		System.out.println();
+
+		int[] votes = new int[5];
+		for(int i = 0; i<5; i++) {
+			System.out.print("enter the # of votes for candidate " +  (names[i]) + ":");;
+			votes[i] = in.nextInt();
+		}
+		
+		System.out.println();
+		
+		double[] percentage = new double[5];
+		for(int i = 0; i<5; i++){
+		    percentage[i] = (votes[i]/SumOfVotes(votes)) *100;
+		}
+		
+		System.out.println();
+		System.out.printf("%s%15s%23s", "Candidate","Votes Received", "% of Total Votes");
+		System.out.println();
+		for(int i = 0; i<5; i++){
+		   System.out.printf("%s%15d%23f", names[i], votes[i], percentage[i]);
+		   System.out.println();
+		}
+		System.out.println("The winner of the Election is " + (winner(names,votes)));
+
+        
+	}
+	
+	public static String winner(String[] array1, int[] array2){
+	    int index = 0;
+	    int max = array2[0];
+	    for(int i = 0; i<5; i++){
+	        if(max<array2[i]){
+	            max = array2[i];
+	            index = i;
+	        }
+	    }
+	    return array1[index];
+	}
+	
+	public static double SumOfVotes(int[] array){
+	    
+	    int total = 0;
+	    for(int i = 0; i<array.length; i++){
+	        total = total + array[i];
+	    }
+	    return total;
+	}
+}

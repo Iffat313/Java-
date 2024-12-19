@@ -1,0 +1,88 @@
+
+import java.util.Scanner;
+public class Temperatures
+{
+	public static void main(String[] args) {
+		int[][] Temperature = new int[12][2];
+
+		getData(Temperature); //when a array is passed to a method it is always pass by reference
+
+		/**	for(int row = 0; row<Temperature.length; row++) {
+				for(int column = 0; column<Temperature[row].length; column++) {
+					System.out.print(Temperature[row][column]);
+				}
+				System.out.println();
+			} **/
+
+		System.out.println("Average high temperature: " + (averageHigh(Temperature)));
+		System.out.println("Average low temperature: " + (averageLow(Temperature)));
+		System.out.println("Highest temperature: " + (indexHighTemp(Temperature)));
+		System.out.println("Lowest temperature: " + (indexLowTemp(Temperature)));
+	}
+
+	public static void getData(int[][] PassedArray) {
+		Scanner in = new Scanner(System.in);
+		for(int row = 0; row<PassedArray.length; row++) {
+			System.out.print("Enter high temperature for each month: "); //high temp is in the first (0) column of every row
+			PassedArray[row][0] = in.nextInt();
+		}
+
+		for(int row = 0; row<PassedArray.length; row++) {
+			System.out.print("Enter low temperature for each month: "); //low temp is in the second (1) column of every row
+			PassedArray[row][1] = in.nextInt();
+		}
+
+
+	}
+
+	public static int averageHigh(int[][] PassedArray) {
+		int HighAvg = 0;
+		for(int row = 0; row<PassedArray.length; row++) {
+			HighAvg = HighAvg + PassedArray[row][0];
+		}
+		HighAvg = HighAvg/12;
+		return HighAvg;
+
+
+
+
+	}
+
+	public static int averageLow(int[][] PassedArray) {
+		int LowAvg = 0;
+		for(int row = 0; row<PassedArray.length; row++) {
+			LowAvg = LowAvg + PassedArray[row][1];
+		}
+		LowAvg = LowAvg/12;
+		return LowAvg;
+
+
+
+
+	}
+
+
+
+	public static int indexHighTemp(int[][] PassedArray) {
+		int max = PassedArray[0][0];
+		for(int row = 0; row<PassedArray.length; row++) {
+			if(max<PassedArray[row][0]) {
+				max = PassedArray[row][0];
+			}
+		}
+
+		return max;
+	}
+
+	public static int indexLowTemp(int[][] PassedArray) {
+		int low = PassedArray[0][1];
+		for(int row = 0; row<PassedArray.length; row++) {
+			if(low>PassedArray[row][1]) {
+				low = PassedArray[row][1];
+			}
+		}
+
+		return low;
+	}
+
+}

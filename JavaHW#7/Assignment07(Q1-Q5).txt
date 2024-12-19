@@ -1,0 +1,73 @@
+Note, this assignment covers chapter 13 and java reflection 	
+
+1a) True
+1b) True 
+1c) False
+1d) False
+1e) True
+1f) True
+1g) True
+1h) False 
+1i) True
+
+2a) No, just like an abstract class you cannot create an instance of an interface via a new operator. 
+
+2b) Yes, this is allowed. A variable of an interface type can reference any instance of a class that implements this interface. 
+
+2c) The error in the code is in class B. Specifically, when you attempt to overload the public abstract method in the interface. The interface illustrates that if there are no modifiers for a method in a interface it is considered as public abstract. Going back, class B does not append the word public, in the beginning of the overloaded method. Remember, in order to overload a method from the superclass in the base class we must copy the method signature. But seeing as it’s abstract, the same rule applies but we do not append the word abstract. 
+interface A {
+void m1();
+}
+class B implements A {
+public void m1() {
+System.out.println("m1");
+}
+}
+
+2d) The benefit of a comparable interface is as follows:
+Works for related and unrelated classes
+The compareTo method can be defined in the interface 
+We can use the java.util.Arrays.sort(array) method provided that the instance of a class implements the Comparable interface. If this is the case, the instance of the class is also considered as an instance of the Comparable interface. Again, as a result, we can create an array of class objects and sort them. 
+
+3a) Incorrect. Remember, if there are no modifiers for a method in an interface it is considered as a public abstract. As we know a method with the modifier abstract can be declared but not be implemented/have a definition. Therefore, we must omit the brackets {}.
+
+3b) correct. 3b is the successful version of what 3a should be.
+
+3c) correct. The interface successfully implements a default instance method. Remember, it may be public but it’s not required. Additionally, you’ll notice that the definition for the default void method is empty. However, this is not a concern because as soon as the compiler sees the breakers, the compiler recognizes that we are defining/implementing a method. 
+
+3d) correct. The interface successfully implements a static method. Remember, it may be public but it’s not required to be. 
+
+4a) This will not run. It is true that the class Tiger is a subclass of the abstract class Animal. However, the class Tiger does not implement the Edible interface. As a result, Tiger is not Edible. Additionally, this would mean that the instance of the subclass Tiger would not be an instance of the interface Edible. In conclusion, x would be storing a genuine reference of an instance of a class that is an instance of the interface.  
+
+4b) This is invalid. Sure, the subclass Chicken successfully implements the interface Edible. This means Chicken is Edible. Furthermore, this means that an instance of the subclass Chicken is an instance of the interface as well. However, what’s occurring here is essentially implicit casting. The reference variable x is an instance of the interface Edible. While, it stores the instance of the subclass Chicken, this is where implicit casting takes affect. The instance of the subclass Chicken becomes the instance of the interface. As a result, we only invoke methods that exist in the interface. Sound exists in the subclass not in the interface, therefore it is an error. 
+
+4c) This is invalid. We are attempting explicit casting but the syntax here is incorrect by parenthesis. 
+
+4d) Chicken: cock-adoodle-doo
+
+
+5a) Java reflection is an API that allows a program to inspect/manipulate classes, methods, fields, and other elements of the Java language at runtime. Java reflection also considers both private or protected access specifiers, will still be accessible 
+
+5b) The main classes involved in Java Reflection are as follows:
+- 
+
+5c) We can obtain the Class object of a Java class from the class called MyClass. Directly obtains the class object at compile time
+Class<MyClass>aClass = MyClass.class
+
+
+5d) In Java Reflection, getDeclaredFields is what allows to get all class fields (accessible and non accessible). To recall. The class fields refers to the member variables of a class. 
+
+5e) We can access private fields using reflection by breaking encapsulation. Additionally, we can obtain the class modifier private ia getModifiers(). We can also use getMethods() method to return all methods in a class, which includes those with the private modifier. Once again to get private class fields we can use getDeclaredFields(). 
+
+5f) The Method class is obtained from the Class object. The Method class in Java Reflection  represents all the methods associated with a class and possibly including inherited methods. For example, the Method class has a method getDeclaredMethods() that can do this.
+
+5g) We can invoke a method from Java Reflection via the Method class, specifically the Method.invoke() method. This method takes an optional number of parameters, but you must supply exactly one parameter per argument in the method you are invoking. 
+
+5h) getDeclaredMethods() is a method from the Method class to get class methods only. getMethods() is a method from the Method class to return all methods in a class including inherited method. 
+
+5j) Reflection impacts the security of a Java application very severely. For instances, it may create security vulnerabilities in said Java applications. This is possible because Reflection can break encapsulation and allow access to private members, which can then expose sensitive data or behavior. 
+
+
+5k) Java reflection can be used to access static methods. This is done by creating an object of the Method class. From there we will use the method from the Method class known as getDeclaredMethod. For example:
+Method staticMethod = MyClass.class.getDeclaredMethod(“StaticMethod”);
+

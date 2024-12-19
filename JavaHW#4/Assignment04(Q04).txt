@@ -1,0 +1,70 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Test
+{
+	public static void main(String[] args) {
+		Time object1 = new Time();
+		Time object2 = new Time(555550000);
+		Time object3 = new Time(5, 23, 55);
+		
+		//print contents of the first class object:
+		
+		System.out.println(object1.getHour() + ": " + object1.getMinute() + ": " + object1.getSecond());
+		System.out.println(object2.getHour() + ": " + object2.getMinute() + ": " + object2.getSecond());
+        System.out.println(object3.getHour() + ": " + object3.getMinute() + ": " + object3.getSecond());
+
+	}
+}
+
+
+class Time{
+    
+   private int Hour;
+   private int Minute;
+   private int Second; 
+   
+   public Time(){
+       Hour = (int)((System.currentTimeMillis() / (1000 * 60 * 60)) %24);
+       Minute = (int)((System.currentTimeMillis() / (1000*60)) % 60);
+       Second = (int)(System.currentTimeMillis() /1000) % 60;
+   }
+   
+   public Time(long elapseTime){
+       Hour = (int)((elapseTime / (1000 * 60 * 60)) %24);
+       Minute = (int)((elapseTime / (1000*60)) % 60);
+       Second = (int)(elapseTime /1000) % 60;
+   }
+   
+   public Time(int h, int m, int s){
+       Hour = h;
+       Minute = m;
+       Second = s;
+   }
+   
+   public int getHour(){
+       return Hour;
+   }
+   
+   public int getMinute(){
+       return Minute;
+   }
+   
+   public int getSecond(){
+       return Second;
+   }
+   
+   public void setTime(long elapseTime){
+       Hour = (int)((elapseTime / (1000 * 60 * 60)) %24);
+       Minute = (int)((elapseTime / (1000*60)) % 60);
+       Second = (int)(elapseTime /1000) % 60;
+   }
+   
+   
+   
+}
